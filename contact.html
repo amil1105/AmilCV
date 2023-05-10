@@ -28,9 +28,9 @@
 </head>
 <body>
 	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
-		<a class="navbar-brand" href="#">About</a>
+		<a class="navbar-brand" href="#"></a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-			<span class="navbar-toggler-icon"></span>
+			<span class="navbar-toggler-icon">Hakkımda</span>
 		</button>
 		<div class="collapse navbar-collapse" id="collapsibleNavbar">
 			<ul class="navbar-nav">
@@ -51,15 +51,17 @@
 	</nav>
 	<div class="container-fluid mt-3">
 		<main>
-			<h1>Contact me</h1>
+			<h1>İletişim</h1>
 			<form method="post" action="submit.html">
-				<label for="name">Name:</label>
+				<label for="name">İsim:</label>
 				<input type="text" name="name" id="name" required>
+				<label for="surname">Soy isim:</label>
+				<input type="text" name="surname" id="surname" required>
 				<label for="email">Email:</label>
 				<input type="email" name="email" id="email" required>
-				<label for="message">Message:</label>
+				<label for="message">Mesaj:</label>
 				<textarea name="message" id="message" required></textarea>
-				<input type="submit" value="Send">
+				<input type="submit" value="Gönder">
 			</form>
 		</main>
 	</div>
