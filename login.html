@@ -49,6 +49,7 @@
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary btn-block" onclick="KullaniciKontrol()">Giriş Yap</button>
+					
                 </div>
             </form>
         <script>
@@ -59,7 +60,7 @@ function KullaniciKontrol()
 			if (username == "admin" && password == "admin") 
             {
                 document.location = "user.html";
-
+				localStorage.setItem("username", username);
 				alert("Başarıyla giriş yaptınız!");
 
 
@@ -71,7 +72,9 @@ function KullaniciKontrol()
 			}
 
 
-}
+
+		}
+		
 
 
 

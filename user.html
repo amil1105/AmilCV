@@ -33,9 +33,19 @@
 	<div class="container-fluid mt-3">
 		
 	</div>
+
 	<main>
-		<h1>Giriş Başarılı</h1>
-		<p>Hoş Geldiniz!</p>
+		<h1>Kullanıcı Yönetim</h1>
+		<p id="KullaniciGirisYapildi">Hoş Geldiniz!</p>
 	</main>
+	<script>
+		var KullaniciGirisYapildi = document.getElementById("KullaniciGirisYapildi");
+		var username = localStorage.getItem("username");
+		if (username) {
+			KullaniciGirisYapildi.innerHTML = "Hoşgeldin, " + username;
+		} else {
+			KullaniciGirisYapildi.innerHTML = "Giriş Yap";
+		}
+	</script>
 </body>
 </html>
