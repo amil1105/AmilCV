@@ -27,10 +27,19 @@
 					<a class="nav-link" href="contact.html">İletişim</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="login.html">Giriş Yap</a>
+					<a id="KullaniciGirisYapildi" class="nav-link" href="login.html">Giriş Yap</a>
 				</li>
 			</ul>
 		</div>
+		<script>
+			var KullaniciGirisYapildi = document.getElementById("KullaniciGirisYapildi");
+			var username = localStorage.getItem("username");
+			if (username) {
+				KullaniciGirisYapildi.innerHTML = username;
+			} else {
+				KullaniciGirisYapildi.innerHTML = "Giriş Yap";
+			}
+		</script>
 	</nav>
 	<div class="container-fluid mt-3">
 		Bilgiler
