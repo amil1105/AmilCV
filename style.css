@@ -1,13 +1,95 @@
+/* General styles */
 
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
 }
 
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+}
 
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 
+nav ul li {
+  display: inline-block;
+}
 
+nav ul li a {
+  color: #fff;
+  display: block;
+  padding: 0.5rem;
+  text-decoration: none;
+}
 
+main {
+  padding: 2rem;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  margin: auto;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+input[type="text"],
+input[type="password"] {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+input[type="submit"] {
+  background-color: #333;
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+p {
+  color: red;
+  margin-top: 1rem;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Login page specific styles */
+
+form {
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  padding: 1rem;
+}
+
+input[type="submit"] {
+  margin-top: 1rem;
+}
+
+input[type="submit"]:hover {
+  background-color: #444;
+}
