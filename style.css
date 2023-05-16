@@ -7,6 +7,27 @@ main {
   height: 100vh;
 }
 
+.BakuText{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  height: 1000vh;
+}
+#BakuFoto {
+  display: flex;
+  border-width:1px;
+border-color:rgb(0, 0, 0);
+border-style:solid;
+width:30%;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+}
+
+#BakuFoto img {
+  max-width: 100%;
+  max-height: 100%;
+}
 
 
 

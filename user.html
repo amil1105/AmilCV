@@ -24,9 +24,11 @@
 					<a class="nav-link" href="about.html">Hakkımda</a>
 				</li>
 				<li class="nav-item">
+					<a class="nav-link" href="myCity.html">Benim Şehirim</a>
+				</li>
+				<li class="nav-item">
 					<a class="nav-link" href="contact.html">İletişim</a>
 				</li>
-				
 			</ul>
 		</div>
 	</nav>
@@ -42,7 +44,7 @@
 		var KullaniciGirisYapildi = document.getElementById("KullaniciGirisYapildi");
 		var username = localStorage.getItem("username");
 		if (username) {
-			KullaniciGirisYapildi.innerHTML = "Hoşgeldin, " + username;
+			KullaniciGirisYapildi.innerHTML = username;
 		} else {
 			KullaniciGirisYapildi.innerHTML = "Giriş Yap";
 		}
