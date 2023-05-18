@@ -1,0 +1,68 @@
+
+  #filmBilgileri {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  #filmResim {
+    width: 300px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  #filmDetaylari {
+    text-align: left;
+  }
+  
+  #filmBaslik {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  #filmYayimTarihi,
+  #filmPuan,
+  #filmTur {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  
+  #filmOzet {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
+  @media (min-width: 768px) {
+
+    #filmBilgileri {
+      flex-direction: row;
+      text-align: left;
+    }
+  
+    #filmResim {
+      margin-right: 20px;
+    }
+  
+    #filmDetaylari {
+      margin-top: 20px;
+    }
+  
+    #filmBaslik {
+      font-size: 28px;
+    }
+  
+    #filmYayimTarihi,
+    #filmPuan,
+    #filmTur {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+  
+    #filmOzet {
+      font-size: 16px;
+    }
+  }
+  

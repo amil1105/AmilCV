@@ -6,13 +6,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="styleAbout.css">
 
 </head>
 <body>
-	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 		<a class="navbar-brand" href="#">Hakkımda</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
 			<span class="navbar-toggler-icon"></span>
@@ -20,20 +20,30 @@
 		<div class="collapse navbar-collapse" id="collapsibleNavbar">
 			<ul class="navbar-nav">
 				<li class="nav-item">
-					<a class="nav-link" href="index.html">Ana Sayfa</a>
+					<a class="nav-link" href="index.php">Ana Sayfa</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="about.html">Hakkımda</a>
+					<a class="nav-link" href="myCity.php">Benim Şehirim</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="myCity.html">Benim Şehirim</a>
+					<a class="nav-link" href="mirasimiz.php">Mirasımız</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="contact.html">İletişim</a>
+					<a class="nav-link" href="ilgiAlanlarim.php">İlgi Alanlarım</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="contact.php">İletişim</a>
 				</li>
 				
 				<li class="nav-item">
-					<a class="nav-link" href="login.html">Giriş Yap</a>
+					<?php
+					session_start();
+					if (isset($_SESSION['username'])) {
+						echo '<a class="nav-link" href="login.php">' . $_SESSION['username'] . '</a>';
+					} else {
+						echo '<a class="nav-link" href="login.php">Giriş Yap</a>';
+					}
+					?>
 				</li>
 			</ul>
 		</div>
@@ -59,9 +69,9 @@
 		<ul>
 		  <li><a href="https://www.siberguvenlikhaftasi.com/" class="link">Siber Güvenlik Haftası</a></li>
 		</ul>
-		<h2>Resimler</h2>
+
 		<img class="hobby-image" src="img/Bisiklet.jpg" alt="Bisiklet Resmi">
-		<img class="hobby-image" src="img/kodyazma.jpg" alt="Kod Resmi">
+		
 
 	</main>
 </body>

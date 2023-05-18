@@ -1,3 +1,42 @@
+<?php
+session_start();
+
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
+    header('Location: user.php');
+    exit;
+}
+
+$username = $password = '';
+$username_err = $password_err = '';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (empty(trim($_POST['username']))) {
+        $username_err = 'Please enter username.';
+    } else {
+        $username = trim($_POST['username']);
+    }
+
+    if (empty(trim($_POST['password']))) {
+        $password_err = 'Please enter your password.';
+    } else {
+        $password = trim($_POST['password']);
+    }
+
+    if (empty($username_err) && empty($password_err)) {
+        if ($username === 'g221210561@sakarya.edu.tr' && $password === 'g221210561') {
+            session_start();
+
+            $_SESSION['loggedin'] = true;
+            $_SESSION['username'] = $username;
+
+            header('Location: user.php');
+            exit;
+        } else {
+            $password_err = 'Kullanıcı Adı veya şifre hatalı.';
+        }
+    }
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,11 +45,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 		<a class="navbar-brand" href="#">Hakkımda</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
 			<span class="navbar-toggler-icon"></span>
@@ -18,20 +56,26 @@
 		<div class="collapse navbar-collapse" id="collapsibleNavbar">
 			<ul class="navbar-nav">
 				<li class="nav-item">
-					<a class="nav-link" href="index.html">Ana Sayfa</a>
+					<a class="nav-link" href="index.php">Ana Sayfa</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="about.html">Hakkımda</a>
+					<a class="nav-link" href="about.php">Hakkımda</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="myCity.html">Benim Şehirim</a>
+					<a class="nav-link" href="myCity.php">Benim Şehirim</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="contact.html">İletişim</a>
+					<a class="nav-link" href="mirasimiz.php">Mirasımız</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="ilgiAlanlarim.php">İlgi Alanlarım</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="contact.php">İletişim</a>
 				</li>
 				
 				<li class="nav-item">
-					<a class="nav-link" href="login.html">Giriş Yap</a>
+					<a class="nav-link" href="login.php">Giriş Yap</a>
 				</li>
 			</ul>
 		</div>
@@ -42,48 +86,21 @@
 	<main>
 		
             <h2>Giriş Yap</h2>
-            <form>
+            <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
                 <div class="form-group">
                     <label for="username">Kullanıcı Adı:</label>
-                    <input type="text" class="form-control" id="username" name="username" required>
-                </div>
+					<input type="email" class="form-control" id="username" name="username" required value="<?php echo htmlspecialchars($username); ?>">
+				</div>
                 <div class="form-group">
                     <label for="password">Şifre:</label>
                     <input type="password" class="form-control" id="password" name="password" required>
-                </div>
+					<span><?php echo $password_err; ?></span>
+				</div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-block" onclick="KullaniciKontrol()">Giriş Yap</button>
+                    <button type="submit" class="btn btn-primary btn-block" value="Login" >Giriş Yap</button>
 					
                 </div>
             </form>
-        <script>
-function KullaniciKontrol()
-{
-    var username = document.getElementById("username").value;
-			var password = document.getElementById("password").value;
-			if (username == "admin" && password == "admin") 
-            {
-                document.location = "user.html";
-				localStorage.setItem("username", username);
-				alert("Başarıyla giriş yaptınız!");
-
-
-			} else 
-            {
-                document.getElementById("username").value=null;
-                document.getElementById("password").value=null;
-				alert("Kullanıcı adı veya şifre yanlış.");
-			}
-
-
-
-		}
-		
-
-
-
-
-        </script>
 	</main>
 </body>
 </html>
