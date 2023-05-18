@@ -10,7 +10,7 @@
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-		<a class="navbar-brand" href="#">Amil Shikhiyev</a>
+		<a class="navbar-brand" href="#">İletişim</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
 			<span class="navbar-toggler-icon"></span>
 		</button>
@@ -31,9 +31,7 @@
 					<li class="nav-item">
 					<a class="nav-link" href="ilgiAlanlarim.php">İlgi Alanlarım</a>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="contact.php">İletişim</a>
-				</li>
+		
 				<li class="nav-item">
 					<?php
 					session_start();
