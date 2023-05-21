@@ -21,12 +21,13 @@
 		}
 
 		.carousel-item img {
-			display: block;
-			margin: 0 auto;
-			max-height: 100%;
-			max-width: 500px;
-			object-fit: cover;
-		}
+    display: block;
+    margin: 0 auto;
+    object-fit: cover;
+    height: 40%;
+    width: 40%;
+}
+
 	</style>
 </head>
 <body>
